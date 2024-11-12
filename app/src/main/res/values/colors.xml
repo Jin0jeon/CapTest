@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F3E9FE</color>
+    <color name="text_color">#331866</color>
+
+    <color name="cloudy_bg">#08b285</color>
+    <color name="rainy_bg">#00477d</color>
+    <color name="sunny_bg">#00cefd</color>
+    <color name="cloudy_sunny_bg">#ff9b07</color>
+    <color name="thunder_rainy_bg">#756b98</color>
+    <color name="cloudy_night_bg">#003b67</color>
+    <color name="clear_night_bg">#55377d</color>
+    <color name="snowy_bg">#94daf5</color>
+    <color name="gray">#B3B3B3</color>
+
+</resources>

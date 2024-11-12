@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="#79DDF3"
+        android:centerColor="#7084D8"
+        android:endColor="#6243DD"
+        android:angle="135"
+        android:centerX="0.7"/>
+    <corners android:radius="30dp"/> <!-- 모든 모서리의 곡률 반경 -->
+</shape>

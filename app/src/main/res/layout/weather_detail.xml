@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/sunny_bg"
+    tools:context=".MainActivity">
+
+    <!-- Weather Information Container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners2"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="271dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/weatherText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:text="오늘은 비 예보가 없습니다."
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/weatherIcon"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/hour_sunny" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tempMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:padding="8dp"
+                        android:text="28°"
+                        android:textColor="#FFFFD75F"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tempCurrent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:padding="8dp"
+                            android:text="28°"
+                            android:textColor="#FFFFFF"
+                            android:textSize="35sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/triangle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="▼"
+                            android:textColor="#FF3F51B5"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tempMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:padding="8dp"
+                        android:text="18°"
+                        android:textColor="#FF576CE1"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/weatherIcon2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="13dp"
+                            android:src="@drawable/rain2" />
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/weatherIcon3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="13dp"
+                            android:src="@drawable/wind" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="1m/s"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/weatherIcon4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="13dp"
+                            android:src="@drawable/humiditly2" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="30%"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dateAndTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="2024-06-01 | 02:36 오후"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|right"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutIcons"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/weatherIcon8"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/rain2"
+                tools:layout_editor_absoluteX="12dp"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <ImageView
+                android:id="@+id/weatherIcon9"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/wind"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="1dp" />
+
+            <ImageView
+                android:id="@+id/weatherIcon10"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                app:srcCompat="@drawable/humiditly2"
+                tools:layout_editor_absoluteX="61dp"
+                tools:layout_editor_absoluteY="0dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1h"
+                android:textAlignment="center"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weatherIcon11"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/hour_sunny"
+                    tools:layout_editor_absoluteX="45dp"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-9°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="48dp"
+                    tools:layout_editor_absoluteY="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="-12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="106dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="129dp"
+                    tools:layout_editor_absoluteY="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h"
+                android:textAlignment="center"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weatherIcon12"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/partly_cloudy_day"
+                    tools:layout_editor_absoluteX="45dp"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <TextView
+                    android:id="@+id/tv10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-11°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="48dp"
+                    tools:layout_editor_absoluteY="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="-12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="106dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="129dp"
+                    tools:layout_editor_absoluteY="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3h"
+                android:textAlignment="center"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weatherIcon13"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/partly_cloudy_day"
+                    tools:layout_editor_absoluteX="45dp"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-10°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="48dp"
+                    tools:layout_editor_absoluteY="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="-12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="106dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="129dp"
+                    tools:layout_editor_absoluteY="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4h"
+                android:textAlignment="center"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weatherIcon14"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/hour_sunny"
+                    tools:layout_editor_absoluteX="45dp"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <TextView
+                    android:id="@+id/tv20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-4°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="48dp"
+                    tools:layout_editor_absoluteY="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="-12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="106dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="129dp"
+                    tools:layout_editor_absoluteY="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:background="@drawable/rounded_corners">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5h"
+                android:textAlignment="center"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/weatherIcon15"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/partly_cloudy_night"
+                    tools:layout_editor_absoluteX="45dp"
+                    tools:layout_editor_absoluteY="5dp" />
+
+                <TextView
+                    android:id="@+id/tv25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-1°"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="48dp"
+                    tools:layout_editor_absoluteY="30dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="-12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="10dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="106dp"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/tv28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="129dp"
+                    tools:layout_editor_absoluteY="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
