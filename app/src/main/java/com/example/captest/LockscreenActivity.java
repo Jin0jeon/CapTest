@@ -62,7 +62,6 @@ public class LockscreenActivity extends AppCompatActivity {
                 }
             });
     private String date = "", time = "";
-   // private Map<String, Map<String, String>> weatherData;
 
     private String weather = "";
     private String settedRegion;

@@ -66,7 +66,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final int LOCATION_SELECT_REQUEST = 1;
-    private String currentRegion;  // 선택된 지역의 위도와 경도가 저장될 변수
 
     private static final int REQUEST_CODE = 1;
 
@@ -79,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvRegion;
     private TextView tvStartTime;
     private TextView tvEndTime;
-    private Button btnStopLocatoin;
-    private BroadcastReceiver receiver;
     private String date;
     private String time;
     private String gridX;
@@ -92,12 +89,6 @@ public class MainActivity extends AppCompatActivity {
     // LocationHelper 인스턴스 생성
     private LocationHelper locationHelper;
 
-
-    // 구글 캘린더 api 사용부 ---
-    private static final int RC_SIGN_IN = 9001;
-    private static final String TAG = "MainActivity";
-    //private GoogleSignInClient mGoogleSignInClient;
-    // ---
     private ActivityResultLauncher<Intent> overlayPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -125,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             overlayPermissionLauncher.launch(intent);
         }
 
+
         String[] location = getLocationData();
         gridX = location[1];
         gridY = location[2];
@@ -142,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         toggle1 = findViewById(R.id.toggle1);
+        toggle1.setOn(isMyServiceRunning(MyForegroundService.class));
 
         toggle1.setOnToggledListener(new OnToggledListener() {
             @Override
